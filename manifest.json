@@ -1,0 +1,17 @@
+{
+    "name": "Habit Flow",
+    "short_name": "HabitFlow",
+    "description": "Your Islamic Productivity Companion",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#1f2937",
+    "theme_color": "#2E8B57",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

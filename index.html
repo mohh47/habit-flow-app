@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>توكل على الله - Tawakkal</title>
+
+    <!-- Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons: FontAwesome (using CDN for simplicity/completeness) or similar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="theme-color" content="#2E8B57">
+</head>
+
+<body class="light-mode">
+    <div id="app">
+        <!-- Application Content Will Be Injected Here -->
+        <div id="loading-screen">
+            <h1 class="logo-text">توكل على الله</h1>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs (v8 for simplicity with compat) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- App Modules -->
+    <script src="js/lang.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/prayers.js"></script>
+    <script src="js/study.js"></script>
+    <script src="js/azkar.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/tasks.js"></script>
+
+    <!-- Auth Modules (Order Matters) -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW Registered'))
+                    .catch(err => console.log('SW Error:', err));
+            });
+        }
+    </script>
+</body>
+</html>
